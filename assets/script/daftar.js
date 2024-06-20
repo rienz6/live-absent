@@ -18,7 +18,7 @@ if (passcode === null || passcode === "" | passcode === undefined) {
 let data = {
     nama: "",
     nim: nim,
-    prodi: "infa",
+    prodi: "kls10",
     tanggapan: "",
     bp: 0,
     setuju: false,

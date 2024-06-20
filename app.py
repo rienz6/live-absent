@@ -183,7 +183,7 @@ def daftar():
             prod = request.form.get("prod", type=str)
             tanggapan = request.form.get("tanggapan", type=str)
             setuju = request.form.get("setuju", type=bool)
-            if nim and nama and bp and prod and tanggapan and setuju and prod in ['infa','si','bd','mr','dkv']:
+            if nim and nama and bp and prod and tanggapan and setuju and prod in ['kls10','kls11','kls12']:
                 if admin["access"]:
                     find_nim = user_db.find_one({"nim":nim})
                     if find_nim is not None and get_time in list(find_nim["attendance"]):
@@ -272,4 +272,4 @@ def check():
         return render_template("check.html", nama="Not Found", nim="Not Found",uuid="Not Found")
 
 if __name__ == "__main__":
-    app.run(debug=False, port=5005)
+    app.run(debug=True, port=5005)

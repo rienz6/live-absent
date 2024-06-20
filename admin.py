@@ -7,7 +7,7 @@ user_db = client.user.data
 admin_db = client.dataadmin.dataadmin
 
 # add attenden day 1, day 2 and last attenden
-date_attend = ("03-03-2024", "04-03-2024","05-03-2024(last attend)")
+date_attend = ("20-06-2024", "21-06-2024","22-06-2024(last attend)")
 
 def spamdb(num):
     data = []
@@ -224,11 +224,9 @@ def checkall_import():
     data_all = user_db.find({"setuju":True})
     grab_collector = []
     for data in list(data_all):
-        if data["prod"] == "infa":prodi = "INFORMATIKA"
-        elif data["prod"] == "si":prodi = "SISTEM INFORMASI"
-        elif data["prod"] == "bd":prodi = "BISNIS DIGITAL"
-        elif data["prod"] == "mr":prodi = "MANAGEMENT RETAIL"
-        elif data["prod"] == "dkv":prodi = "DESAIN KOMUNIKASI VISUAL"
+        if data["prod"] == "kls10":prodi = "KELAS 10"
+        elif data["prod"] == "kls11":prodi = "KELAS 11"
+        elif data["prod"] == "kls12":prodi = "KELAS 12"
         att1 = find_attend(data["attendance"], date_attend[0])
         if att1 == True:
             att1 = date_attend[0]
@@ -265,11 +263,10 @@ def checkall_import():
 def checkall_cert():
     data_all = user_db.find({"setuju":True})
     for i, data in enumerate(list(data_all)):
-        if data["prod"] == "infa":prodi = "INFORMATIKA"
-        elif data["prod"] == "si":prodi = "SISTEM INFORMASI"
-        elif data["prod"] == "bd":prodi = "BISNIS DIGITAL"
-        elif data["prod"] == "mr":prodi = "MANAGEMENT RETAIL"
-        elif data["prod"] == "dkv":prodi = "DESAIN KOMUNIKASI VISUAL"
+        if data["prod"] == "kls10":prodi = "KELAS 10"
+        elif data["prod"] == "kls11":prodi = "KELAS 11"
+        elif data["prod"] == "kls12":prodi = "KELAS 12"
+
         att1 = find_attend(data["attendance"], date_attend[0])
         att2 = find_attend(data["attendance"], date_attend[1])
         att3 = find_attend(data["attendance"], date_attend[2])
